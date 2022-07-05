@@ -4,13 +4,17 @@ services:
     image: influxdb
     restart: always
     env_file:
-      - db_example.env
+      - db.env
+    # - db_example.env
     ports:
       - 8086:8086
     volumes:
-      - influx_data:/var/lib/influxdb2
-      - influx_config:/etc/influxdb2
-      - influx_scripts:/docker-entrypoint-initdb.d
+      - /mnt/usbdrive/docker/data/influxdb/data:/var/lib/influxdb2
+      - /mnt/usbdrive/docker/data/influxdb/config:/etc/influxdb2
+      - /mnt/usbdrive/docker/data/influxdb/scripts:/docker-entrypoint-initdb.d
+    # - influx_data:/var/lib/influxdb2
+    # - influx_config:/etc/influxdb2
+    # - influx_scripts:/docker-entrypoint-initdb.d
 
 
 
