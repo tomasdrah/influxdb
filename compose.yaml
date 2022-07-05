@@ -19,6 +19,6 @@ services:
 
 
 volumes:
-  influx_data:
-  influx_config:
-  influx_scripts:
+#  influx_data:
+#  influx_config:
+#  influx_scripts:
