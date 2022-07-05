@@ -1,0 +1,20 @@
+services:
+  influx:
+    container_name: influxdb
+    image: influxdb
+    restart: always
+    env_file:
+      - db_example.env
+    ports:
+      - 8086:8086
+    volumes:
+      - influx_data:/var/lib/influxdb2
+      - influx_config:/etc/influxdb2
+      - influx_scripts:/docker-entrypoint-initdb.d
+
+
+
+volumes:
+  influx_data:
+  influx_config:
+  influx_scripts:
